@@ -6,15 +6,16 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { MoreHoriz } from '@material-ui/icons'
+import MenuList from './../menuList/MenuList'
 
 const styles =(theme) => ({
     navi:{
       justifyContent: 'space-around',
-      display: 'flex',    
+      display: 'flex',
       border: '1px solid black',
       borderRadius: '10px',
       margin: '10px 10px 0 10px',
+      alignItems: 'center',
     }
   });
   
@@ -28,9 +29,9 @@ const styles =(theme) => ({
     };
 
     icones = [
-        {
+          {
             value: "teste",
-            label: 'Tá na hora',
+            label: 'Hora',
             component: <RestoreIcon />
           },
           {
@@ -45,8 +46,8 @@ const styles =(theme) => ({
           },
           {
             value: "more",
-            label: 'Ver mais',
-            component: <MoreHoriz />
+            label: '',
+            component: <MenuList />
           } 
       ]
     

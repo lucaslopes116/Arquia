@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../components/container/Container'
-import Menu from '../components/menuBotton/Menu'
+import Container from '../components/container/Container';
+import Menu from '../components/menuBotton/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ const style = (theme) => ({
         flexDirection: 'column',
         border: '1px solid black',
         borderRadius: '10px',
-        height: '85vh',        
+        height: '85vh',
     },
 })
 
