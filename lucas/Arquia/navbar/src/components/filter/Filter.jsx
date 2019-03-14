@@ -17,6 +17,13 @@ const styles = (theme) => ({
 		left: 0,
 		backgroundColor: 'red',
 		zIndex: '150'
+	},
+
+	buttonContainer: {
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		width: '25%'
 	}
 })
 
@@ -44,22 +51,22 @@ class Filter extends React.Component {
 		return (
 			<div className={classes.containerFilter}>
 				<ClickAwayListener onClickAway={this.handleClickAway}>
-					<div>
+					<div className={classes.buttonContainer}>
 						<Button onClick={this.handleClick}>
 							Abrir filtro
 							<BottomNavigationAction
 								className={classes.menuAdicional}
 								icon={<KeyboardArrowDown />}
 							/>
-							{open ? (
-								<ul>
-									<li>teste</li>
-									<li>teste</li>
-									<li>teste</li>
-									<li>teste</li>
-								</ul>
-							) : null}
 						</Button>
+						{open ? (
+							<ul>
+								<li>teste</li>
+								<li>teste</li>
+								<li>teste</li>
+								<li>teste</li>
+							</ul>
+						) : null}
 					</div>
 				</ClickAwayListener>
 			</div>
