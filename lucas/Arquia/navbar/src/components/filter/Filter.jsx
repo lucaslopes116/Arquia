@@ -1,81 +1,76 @@
 import React from 'react'
-import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
+import TittleFiltro from './../tittleFiltro/TittleFiltro'
+import ChipsArray from './../chip/ChipsArray'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import Button from '@material-ui/core/Button'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const styles = (theme) => ({
-	containerFilter: {
-		position: 'relative'
-	},
-	paper: {
-		position: 'absolute',
-		top: 36,
-		right: 0,
-		left: 0,
-		backgroundColor: 'red',
-		zIndex: '150'
-	},
-
-	buttonContainer: {
+	filterContainer: {
+		Width: '200px',
 		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'center',
-		width: '25%'
+		position: 'absolute',
+		top: '30px',
+		left: '33%',
+		right: '33%'
+	},
+	heading: {
+		fontSize: theme.typography.pxToRem(15),
+		flexBasis: '33.33%',
+		flexShrink: 0,
+		margintop: '100px'
+	},
+	filter: {
+		Width: '100%'
+	},
+	expandIcon: {
+		top: '30%'
+	},
+	teste: {
+		marginTop: '10px'
 	}
 })
 
-class Filter extends React.Component {
+class ControlledExpansionPanels extends React.Component {
 	state = {
-		open: true
+		expanded: null
 	}
 
-	handleClick = () => {
-		this.setState((state) => ({
-			open: !state.open
-		}))
-	}
-
-	handleClickAway = () => {
+	handleChange = (panel) => (event, expanded) => {
 		this.setState({
-			open: false
+			expanded: expanded ? panel : false
 		})
 	}
 
 	render() {
 		const { classes } = this.props
-		const { open } = this.state
+		const { expanded } = this.state
 
 		return (
-			<div className={classes.containerFilter}>
-				<ClickAwayListener onClickAway={this.handleClickAway}>
-					<div className={classes.buttonContainer}>
-						<Button onClick={this.handleClick}>
-							Abrir filtro
-							<BottomNavigationAction
-								className={classes.menuAdicional}
-								icon={<KeyboardArrowDown />}
-							/>
-						</Button>
-						{open ? (
-							<ul>
-								<li>teste</li>
-								<li>teste</li>
-								<li>teste</li>
-								<li>teste</li>
-							</ul>
-						) : null}
-					</div>
-				</ClickAwayListener>
+			<div className={classes.filterContainer}>
+				<ExpansionPanel
+					className={classes.filter}
+					expanded={expanded === 'panel1'}
+					onChange={this.handleChange('panel1')}
+				>
+					<ExpansionPanelSummary
+						expandIcon={
+							<ExpandMoreIcon className={classes.teste} />
+						}
+					>
+						<TittleFiltro />
+					</ExpansionPanelSummary>
+					<ChipsArray />
+				</ExpansionPanel>
 			</div>
 		)
 	}
 }
 
-Filter.propTypes = {
+ControlledExpansionPanels.propTypes = {
 	classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Filter)
+export default withStyles(styles)(ControlledExpansionPanels)

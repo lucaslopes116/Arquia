@@ -18,7 +18,8 @@ const styles = (theme) => ({
 		justifyContent: 'space-around',
 		alignItems: 'center',
 		height: '46px',
-		backgroundColor: '#9575cd'
+		backgroundColor: '#9575cd',
+		zIndex: '1'
 	},
 
 	icons: {
@@ -28,6 +29,9 @@ const styles = (theme) => ({
 })
 
 class Header extends React.Component {
+	reload = () => {
+		window.location.reload()
+	}
 	render() {
 		const { classes } = this.props
 		return (
@@ -43,6 +47,7 @@ class Header extends React.Component {
 					<BottomNavigationAction
 						className={classes.icons}
 						icon={<Autorenew />}
+						onClick={this.reload}
 					/>
 				</div>
 			</React.Fragment>

@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 
 const styles = (theme) => ({
 	tittle: {
-		margin: '30px',
-		fontWeight: 'bolder'
+		margin: '40px 20px 20px',
+		fontFamily: 'Roboto',
+		fontWeight: 'Bold'
 	}
 })
 
@@ -14,7 +15,8 @@ class Container extends React.Component {
 		const { classes } = this.props
 		return (
 			<div>
-				<h1 className={classes.tittle}>Teste do teste</h1>
+				<h1 className={classes.tittle}>Título</h1>
+				<p>* gráfico *</p>
 			</div>
 		)
 	}
