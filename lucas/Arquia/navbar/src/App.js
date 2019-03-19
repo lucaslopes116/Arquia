@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import Home from './screen/Home'
-import './App.css';
+import React, { Component } from 'react'
+import Card from './screen/Card'
+import './App.css'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Home/>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<Card />
+				<Card />
+			</div>
+		)
+	}
 }
 
-export default App;
+export default App

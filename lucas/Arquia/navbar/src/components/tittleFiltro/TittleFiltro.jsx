@@ -7,7 +7,7 @@ const styles = (theme) => ({
 		fontSize: theme.typography.pxToRem(15),
 		flexBasis: '33.33%',
 		flexShrink: 0,
-		marginTop: '7px'
+		marginTop: '4px'
 	}
 })
 

@@ -2,6 +2,7 @@ import React from 'react'
 import Filter from '../components/filter/Filter'
 import Container from '../components/container/Container'
 import Menu from '../components/menuBotton/Menu'
+import NewMenuBotton from '../components/newMenuBotton/NewMenuBotton'
 import Header from '../components/header/Header'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
@@ -9,17 +10,18 @@ import PropTypes from 'prop-types'
 const style = (theme) => ({
 	main: {
 		position: 'relative',
-		margin: '10px 10px 10px 10px',
+		margin: '10px',
 		display: 'flex',
 		flexDirection: 'column',
 		border: '1px solid black',
 		borderRadius: '10px',
 		minHeight: '400px',
-		overflow: 'hidden'
+		overflow: 'hidden',
+		maxWidth: '350px'
 	}
 })
 
-class Home extends React.Component {
+class Card extends React.Component {
 	render() {
 		const { classes } = this.props
 
@@ -29,15 +31,15 @@ class Home extends React.Component {
 					<Header />
 					<Filter />
 					<Container />
-					<Menu />
+					<NewMenuBotton />
 				</div>
 			</React.Fragment>
 		)
 	}
 }
 
-Home.propTypes = {
+Card.propTypes = {
 	classes: PropTypes.object.isRequired
 }
 
-export default withStyles(style)(Home)
+export default withStyles(style)(Card)

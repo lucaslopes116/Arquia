@@ -15,7 +15,7 @@ const styles = (theme) => ({
 
 	headContainer: {
 		display: 'flex',
-		justifyContent: 'space-around',
+		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: '46px',
 		backgroundColor: '#9575cd',
