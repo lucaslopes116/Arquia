@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import FilterList from '@material-ui/icons/FilterList'
+import classNames from 'classnames'
 
 const styles = (themes) => ({
 	newMenu: {
@@ -47,8 +48,9 @@ class NewMenuBotton extends React.Component {
 				className={classes.newMenu}
 			>
 				<BottomNavigationAction
-					className={classes.newMenuLabel}
+					className={classNames(classes.newMenuLabel)}
 					label="Card"
+					onClick={this.props.menuCard}
 				/>
 				<hr className={classes.linhaVertical} />
 				<BottomNavigationAction

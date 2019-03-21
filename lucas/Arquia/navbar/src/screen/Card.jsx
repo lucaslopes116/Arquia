@@ -1,23 +1,22 @@
 import React from 'react'
 import Filter from '../components/filter/Filter'
 import Container from '../components/container/Container'
-import Menu from '../components/menuBotton/Menu'
-import NewMenuBotton from '../components/newMenuBotton/NewMenuBotton'
 import Header from '../components/header/Header'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 
 const style = (theme) => ({
 	main: {
-		position: 'relative',
-		margin: '10px',
+		/* margin: 10px; */
+		/* border: 1px solid black; */
 		display: 'flex',
-		flexDirection: 'column',
-		border: '1px solid black',
-		borderRadius: '10px',
-		minHeight: '400px',
+		/* position: relative; */
 		overflow: 'hidden',
-		maxWidth: '350px'
+		/* max-width: 350px; */
+		width: '100%',
+		minHeight: '400px',
+		/* border-radius: 10px; */
+		flexDirection: 'column'
 	}
 })
 
@@ -31,7 +30,6 @@ class Card extends React.Component {
 					<Header />
 					<Filter />
 					<Container />
-					<NewMenuBotton />
 				</div>
 			</React.Fragment>
 		)

@@ -1,4 +1,5 @@
 import React from 'react'
+import SwiperTeste from '../swiper/SwiperTeste'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 
@@ -17,6 +18,7 @@ class Container extends React.Component {
 			<div>
 				<h1 className={classes.tittle}>Título</h1>
 				<p>* gráfico *</p>
+				<SwiperTeste />
 			</div>
 		)
 	}
